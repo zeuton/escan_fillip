@@ -1,0 +1,9 @@
+Pull data from website 20+ times, compute output dataframes in pandas to find specific data points and tables. This will eventually be connected to a front-end application. The data will be pulled from etherscan.io you can view their api documentation here https://docs.etherscan.io/. Here is a github repository with information on pulling this data https://github.com/pcko1/etherscan-python.
+
+The data needed is contained in the ERC721 tokens by Address, Transactions by Address, and Internal Transactions by Address. User input is wallet addresses from etherscan.io. API key in .py file. The output will be three dataframes. One is already started in the escan_loop.py file. These transactions should be in chronological order - we need to change the timeStamp to a mm-dd-yy format. We also need to be able to sum all wallet balances by Block Number and keep a cumulative running total for all wallets combined as another field in this table. Similar to the Wallet Balance tab in the attached Tax Template.
+
+The second will pull hash, from, contract address, to, tokenId, and token name from ERC721, and then txn fee (gas Used x gas Price) and value from the internal transactions data or the transactions data depending on whether the transaction was sent to the address or sent from the address (buy vs sell).
+
+Last dataframe should connect the internal and transactions dataframes on tokenID and token name to determine a profit/loss for each token based on (value + txn fee) from transactions as cost and value from internal transactions as revenue. It should be able to support multiple buys and sells for the same tokenID.
+
+Please let me know if you have any questions.
